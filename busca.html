@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Buscar - Clonection</title>
+<link rel="stylesheet" href="Busca.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="topo">
+        <h1>Buscar</h1>
+
+        <div class="search-box">
+            <input type="text" placeholder="Procure pessoas, sósias ou vídeos...">
+            <button>Buscar</button>
+        </div>
+    </header>
+
+    <div class="filtros">
+        <button class="ativo">Todos</button>
+        <button>Sósias</button>
+        <button>Matches</button>
+        <button>Atores</button>
+    </div>
+
+    <section class="resultados">
+
+          <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Lucas Silva</h2>
+            <p>Sósia do Neymar</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Ana Costa</h2>
+            <p>Criadora de vídeos de dublagem</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>João Mendes</h2>
+            <p>Sósia do Keanu Reeves</p>
+        </div> 
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Pedro Almeida</h2>
+            <p>Sósia do Cristiano Ronaldo</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Mariana Souza</h2>
+            <p>Sósia da Selena Gomez</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Gabriel Lima</h2>
+            <p>Sósia do The Rock</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Juliana Rocha</h2>
+            <p>Sósia da Ariana Grande</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Rafael Santos</h2>
+            <p>Sósia do Messi</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Camila Ferreira</h2>
+            <p>Sósia da Zendaya</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Bruno Oliveira</h2>
+            <p>Sósia do Tom Holland</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Isabela Martins</h2>
+            <p>Sósia da Billie Eilish</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Diego Pereira</h2>
+            <p>Sósia do Vin Diesel</p>
+        </div>
+<div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Zendaya</h2>
+            <p>Atriz de Euphoria e Duna</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Keanu Reeves</h2>
+            <p>Ator de Matrix e John Wick</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Tom Holland</h2>
+            <p>Ator do Homem-Aranha</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="avatar"></div>
+        <div>
+            <h2>Billie Eilish</h2>
+            <p>Cantora e Compositora</p>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const campoBusca = document.querySelector('.search-box input');
+    const btnBuscar = document.querySelector('.search-box button');
+    const botoesFiltro = document.querySelectorAll('.filtros button');
+    const containerResultados = document.querySelector('.resultados');
+    const cardsOriginais = Array.from(document.querySelectorAll('.card'));
+
+   
+    const detalhesPerfis = {
+        "Lucas Silva": { 
+            quemE: "Sósia Oficial Premium do Neymar Jr.", 
+            oQueFaz: "Fenômeno das redes sociais com mais de 2M de visualizações. Especialista em ativações de marcas esportivas, presença VIP em camarotes e interação hiper-realista com o público simulando a chegada do craque.",
+            notas: [5, 5, 4, 5],
+            comentarios: ["Contratei para a feira da minha marca e parou o pavilhão!", "Até o jeito de andar é igual."]
+        },
+        "João Mendes": { 
+            quemE: "Sósia Profissional de Keanu Reeves (John Wick)", 
+            oQueFaz: "Performance impactante com terno sob medida blindado e postura idêntica ao personagem dos cinemas. Ideal para lançamentos de produtos tecnológicos, festas temáticas de cinema e feiras geeks.",
+            notas: [5, 4, 5],
+            comentarios: ["Parece que saiu direto da tela do cinema.", "Muito simpático e focado no personagem."]
+        },
+        "Pedro Almeida": { 
+            quemE: "Sósia de Elite do Cristiano Ronaldo (CR7)", 
+            oQueFaz: "Sósia físico com preparo atlético ideal para gravação de comerciais de alta performance, desafios de futebol e aniversários. Conhecido pelo lendário grito de comemoração 'Siuuu' idêntico ao original.",
+            notas: [5, 5, 5],
+            comentarios: ["O grito de comemoração dele arrepiou a festa toda!", "Monstro da presença VIP."]
+        },
+        "Mariana Souza": { 
+            quemE: "Cover e Sósia Premium de Selena Gomez", 
+            oQueFaz: "Disponível para shows em formato pocket e playback coreografado, recepções sofisticadas, ensaios de moda e campanhas publicitárias focadas no público jovem e de cosméticos.",
+            notas: [4, 5, 5],
+            comentarios: ["Lindo figurino e presença de palco impecável.", "Minha filha de 15 anos amou!"]
+        },
+        "Zendaya": { 
+            quemE: "Estrela Internacional e Ícone de Hollywood", 
+            oQueFaz: "Protagonista consagrada em franquias bilionárias como Duna e Homem-Aranha. Vencedora do Emmy e referência absoluta na alta costura global, arrastando multidões por onde passa.",
+            notas: [5, 5, 5, 5],
+            comentarios: ["A maior artista da geração.", "Talento e elegância insuperáveis."]
+        },
+        "Keanu Reeves": { 
+            quemE: "Lenda do Cinema de Ação e Ficção Científica", 
+            oQueFaz: "Imortalizado por liderar as bilheterias mundiais com as sagas Matrix e John Wick. Conhecido mundialmente por seu carisma, profissionalismo lendário e forte apelo com o público de todas as idades.",
+            notas: [5, 5],
+            comentarios: ["Uma lenda viva.", "A maior referência de carisma no cinema."]
+        },
+        "Tom Holland": { 
+            quemE: "O Homem-Aranha da Nova Geração", 
+            oQueFaz: "Ator britânico recordista de bilheterias no Universo Marvel. Dono de uma agilidade impressionante e carisma magnético que conecta instantaneamente com campanhas jovens e produções de aventura.",
+            notas: [5, 4, 5],
+            comentarios: ["Incrível a energia que ele passa.", "Excelente ator de blockbusters."]
+        },
+        "Billie Eilish": { 
+            quemE: "Vencedora do Oscar e Fenômeno Musical Global", 
+            oQueFaz: "Uma das artistas mais ouvidas do planeta, acumulando recordes de streaming, prêmios Grammy e estatuetas do Oscar. Lidera o comportamento e a estética da cultura pop atual com autenticidade.",
+            notas: [5, 5, 5],
+            comentarios: ["Voz de uma geração.", "Produções visuais e músicas fantásticas."]
+        }
+    };
+
+  
+    let perfisQueDeramMatch = ["Lucas Silva", "Mariana Souza"]; 
+    let mensagensChat = {
+        "Lucas Silva": [{ enviadoPor: "sosia", texto: "Olá! Obrigado pelo match corporativo. Qual a data e local do seu evento com o sósia do Neymar?" }],
+        "Mariana Souza": [{ enviadoPor: "sosia", texto: "Opa! Tudo bem? Fiquei super feliz com nossa conexão. Como posso te ajudar hoje?" }]
+    };
+
+  
+    const modalPerfil = document.createElement('div');
+    modalPerfil.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,10,15,0.92); display:none; justify-content:center; align-items:center; z-index:9999; font-family:sans-serif; padding:15px;";
+    modalPerfil.innerHTML = `
+        <div style="background:#1a1a22; border:2px solid #db00b6; border-radius:16px; padding:25px; max-width:480px; width:100%; color:#fff; position:relative; box-shadow: 0 0 30px rgba(219, 0, 182, 0.4); max-height:90vh; overflow-y:auto;">
+            <button id="fechar-modal-perfil" style="position:absolute; top:15px; right:15px; background:none; border:none; color:#db00b6; font-size:26px; cursor:pointer; font-weight:bold;">&times;</button>
+            
+            <div style="text-align:center;">
+                <div id="mp-avatar" style="width:110px; height:110px; border-radius:50%; border:3px solid #db00b6; margin:0 auto 10px; overflow:hidden;"></div>
+                <h2 id="mp-nome" style="margin:5px 0; font-size:24px;"></h2>
+                <div style="margin-bottom:15px;"><span style="color:#ffc107; font-size:18px;">⭐ <span id="mp-media">5.0</span></span> <span style="font-size:12px; opacity:0.6;">(<span id="mp-votos-total">0</span> avaliações)</span></div>
+            </div>
+
+            <p style="color:#db00b6; font-weight:bold; font-size:13px; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Quem É</p>
+            <p id="mp-quem" style="font-size:14px; opacity:0.9; line-height:1.5; margin-bottom:12px; background:rgba(255,255,255,0.03); padding:10px; border-radius:8px; border-left:3px solid #db00b6;"></p>
+            
+            <p style="color:#db00b6; font-weight:bold; font-size:13px; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Atividades & Serviços</p>
+            <p id="mp-faz" style="font-size:14px; opacity:0.9; line-height:1.5; margin-bottom:20px;"></p>
+
+            <div id="zona-tinder" style="background:#111116; border:1px solid #333; padding:15px; border-radius:12px; text-align:center; margin-bottom:25px;"></div>
+
+            <div style="border-top:1px solid #333; padding-top:20px; margin-bottom:20px;">
+                <h4 style="margin:0 0 10px 0; color:#db00b6; font-size:14px; text-transform:uppercase; letter-spacing:1px;">Avalie este profissional</h4>
+                <div id="campo-estrelas" style="display:flex; gap:5px; margin-bottom:10px; font-size:24px; cursor:pointer; color:#444;">
+                    <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+                </div>
+                <input id="input-comentario-usuario" type="text" placeholder="Deixe seu depoimento sobre o serviço..." style="width:100%; background:#252530; border:1px solid #444; padding:10px; border-radius:8px; color:#fff; font-size:13px; outline:none; box-sizing:border-box; margin-bottom:8px;">
+                <button id="btn-enviar-avaliacao" style="background:#00b6db; color:#fff; border:none; width:100%; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer; font-size:13px;">Enviar Minha Avaliação</button>
+            </div>
+
+            <h4 style="margin:0 0 8px 0; font-size:13px; color:#aaa;">Últimos Feedbacks:</h4>
+            <div id="lista-comentarios-feed" style="display:flex; flex-direction:column; gap:8px; max-height:120px; overflow-y:auto; font-size:12px; font-style:italic; opacity:0.8;"></div>
+        </div>
+    `;
+    document.body.appendChild(modalPerfil);
+
+   
+    const modalChat = document.createElement('div');
+    modalChat.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:none; justify-content:center; align-items:center; z-index:10000; font-family:sans-serif; padding:20px;";
+    modalChat.innerHTML = `
+        <div style="background:#1e1e24; border:2px solid #db00b6; border-radius:15px; max-width:400px; width:100%; height:500px; display:flex; flex-direction:column; color:#fff; position:relative; overflow:hidden;">
+            <div style="background:rgba(0,0,0,0.2); padding:15px; border-bottom:1px solid #db00b6; display:flex; align-items:center; justify-content:space-between;">
+                <h3 id="chat-nome" style="margin:0; font-size:16px;">Conversa</h3>
+                <button id="fechar-chat" style="background:none; border:none; color:#db00b6; font-size:24px; cursor:pointer;">&times;</button>
+            </div>
+            <div id="chat-mensagens" style="flex:1; padding:15px; overflow-y:auto; display:flex; flex-direction:column; gap:10px;"></div>
+            <div style="padding:10px; background:rgba(0,0,0,0.3); display:flex; gap:8px;">
+                <input id="chat-input" type="text" placeholder="Combine o evento, local e horários..." style="flex:1; background:#2a2a35; border:1px solid #444; border-radius:20px; padding:8px 15px; color:#fff; outline:none;">
+                <button id="chat-enviar" style="background:#db00b6; border:none; color:#fff; padding:8px 15px; border-radius:20px; cursor:pointer; font-weight:bold;">Enviar</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modalChat);
+
+    
+    let sósiaAtual = "";
+    let notaSelecionadaUsuario = 0;
+
+    function abrirModalPerfil(nome, elementoAvatarOriginal) {
+        sósiaAtual = nome;
+        notaSelecionadaUsuario = 0;
+        resetarEstrelasFormulario();
+        modalPerfil.querySelector('#input-comentario-usuario').value = '';
+
+        const cardOriginal = cardsOriginais.find(c => c.querySelector('h2').innerText.trim() === nome);
+        const descricaoOriginal = cardOriginal ? cardOriginal.querySelector('p').innerText : "Profissional Cadastrado.";
+        
+        const dados = detalhesPerfis[nome] || { 
+            quemE: `Profissional especializado em performance visual artística.`, 
+            oQueFaz: `Interações ao vivo com foco em engajamento corporativo e eventos.`,
+            notas: [5], 
+            comentarios: ["Muito profissional."] 
+        };
+        if(!detalhesPerfis[nome]) detalhesPerfis[nome] = dados;
+
+      
+        const imgHtmlInterno = elementoAvatarOriginal ? elementoAvatarOriginal.innerHTML : "";
+        modalPerfil.querySelector('#mp-avatar').innerHTML = imgHtmlInterno;
+        
+        modalPerfil.querySelector('#mp-nome').innerText = nome;
+        modalPerfil.querySelector('#mp-quem').innerText = dados.quemE;
+        modalPerfil.querySelector('#mp-faz').innerText = dados.oQueFaz;
+
+        renderizarNotasEComentarios();
+
+        const zonaTinder = modalPerfil.querySelector('#zona-tinder');
+        if (perfisQueDeramMatch.includes(nome)) {
+            zonaTinder.innerHTML = `<button id="btn-ir-chat-direto" style="background:#00b6db; color:#fff; border:none; width:100%; padding:12px; border-radius:25px; font-weight:bold; cursor:pointer; font-size:14px;">💬 Abrir Bate-papo Ativo</button>`;
+            zonaTinder.querySelector('#btn-ir-chat-direto').addEventListener('click', () => {
+                modalPerfil.style.display = 'none';
+                abrirBatePapo(nome);
+            });
+        } else {
+            zonaTinder.innerHTML = `
+                <p id="tinder-status" style="font-size:14px; margin-bottom:10px; font-weight:bold;">Gostou do perfil? Tente uma combinação!</p>
+                <div style="display:flex; justify-content:center; gap:20px;">
+                    <button id="btn-tinder-recusar" style="background:#333; border:1px solid #555; color:#ff4f4f; width:45px; height:45px; border-radius:50%; font-size:18px; cursor:pointer;">✕</button>
+                    <button id="btn-tinder-aceitar" style="background:#db00b6; color:#fff; width:45px; height:45px; border-radius:50%; font-size:18px; cursor:pointer; box-shadow:0 0 10px rgba(219,0,182,0.4);">❤️</button>
+                </div>
+            `;
+            zonaTinder.querySelector('#btn-tinder-aceitar').addEventListener('click', executarCurtidaTinder);
+            zonaTinder.querySelector('#btn-tinder-recusar').addEventListener('click', () => modalPerfil.style.display = 'none');
+        }
+
+        modalPerfil.style.display = 'flex';
+    }
+
+    function renderizarNotasEComentarios() {
+        const dados = detalhesPerfis[sósiaAtual];
+        const soma = dados.notas.reduce((a, b) => a + b, 0);
+        const media = (soma / dados.notas.length).toFixed(1);
+
+        modalPerfil.querySelector('#mp-media').innerText = media;
+        modalPerfil.querySelector('#mp-votos-total').innerText = dados.notas.length;
+
+        const containerFeed = modalPerfil.querySelector('#lista-comentarios-feed');
+        containerFeed.innerHTML = '';
+        dados.comentarios.slice().reverse().forEach(txt => {
+            containerFeed.innerHTML += `<div style="background:rgba(255,255,255,0.02); padding:6px 10px; border-radius:6px; border-left:2px solid #00b6db;">🔹 "${txt}"</div>`;
+        });
+    }
+
+    function executarCurtidaTinder() {
+        if (!perfisQueDeramMatch.includes(sósiaAtual)) {
+            perfisQueDeramMatch.push(sósiaAtual);
+            if (!mensagensChat[sósiaAtual]) {
+                mensagensChat[sósiaAtual] = [{ enviadoPor: "sosia", texto: `Olá! Nosso match deu certo. Qual o formato de evento que você está planejando?` }];
+            }
+        }
+        alert(`🔥 DEU MATCH! Você e ${sósiaAtual} se curtiram mutuamente. O chat já está ativo na aba 'Matches'!`);
+        modalPerfil.style.display = 'none';
+        atualizarFeed();
+    }
+
+    // Estrelas Clicáveis
+    const estrelas = modalPerfil.querySelectorAll('#campo-estrelas span');
+    estrelas.forEach(est => {
+        est.addEventListener('click', () => {
+            notaSelecionadaUsuario = parseInt(est.getAttribute('data-v'));
+            estrelas.forEach((e, idx) => {
+                e.style.color = idx < notaSelecionadaUsuario ? '#ffc107' : '#444';
+            });
+        });
+    });
+
+    function resetarEstrelasFormulario() {
+        estrelas.forEach(e => e.style.color = '#444');
+    }
+
+    
+    modalPerfil.querySelector('#btn-enviar-avaliacao').addEventListener('click', () => {
+        const inputTxt = modalPerfil.querySelector('#input-comentario-usuario');
+        const comentario = inputTxt.value.trim();
+
+        if (notaSelecionadaUsuario === 0) {
+            alert("Selecione uma nota de 1 a 5 clicando nas estrelas!");
+            return;
+        }
+        if (!comentario) {
+            alert("Escreva um comentário antes de enviar!");
+            return;
+        }
+
+        detalhesPerfis[sósiaAtual].notas.push(notaSelecionadaUsuario);
+        detalhesPerfis[sósiaAtual].comentarios.push(comentario);
+
+        inputTxt.value = '';
+        notaSelecionadaUsuario = 0;
+        resetarEstrelasFormulario();
+        
+        renderizarNotasEComentarios();
+        alert("Obrigado! Sua avaliação foi computada com sucesso.");
+    });
+
+    
+    function abrirBatePapo(nome) {
+        sósiaAtual = nome;
+        modalChat.querySelector('#chat-nome').innerText = `Negociação Comercial: ${nome}`;
+        renderizarMensagens();
+        modalChat.style.display = 'flex';
+    }
+
+    function renderizarMensagens() {
+        const box = modalChat.querySelector('#chat-mensagens');
+        box.innerHTML = '';
+        const historico = mensagensChat[sósiaAtual] || [];
+        
+        historico.forEach(msg => {
+            const linha = document.createElement('div');
+            linha.style.display = 'flex';
+            linha.style.justifyContent = msg.enviadoPor === 'usuario' ? 'flex-end' : 'flex-start';
+            
+            const balao = document.createElement('div');
+            balao.innerText = msg.texto;
+            balao.style.cssText = `padding:8px 14px; border-radius:15px; max-width:75%; font-size:14px; line-height:1.4; ${
+                msg.enviadoPor === 'usuario' 
+                ? 'background:#db00b6; color:#fff; border-bottom-right-radius:2px;' 
+                : 'background:#3a3a45; color:#fff; border-bottom-left-radius:2px;'
+            }`;
+            
+            linha.appendChild(balao);
+            box.appendChild(linha);
+        });
+        box.scrollTop = box.scrollHeight;
+    }
+
+    function enviarMensagem() {
+        const input = modalChat.querySelector('#chat-input');
+        const texto = input.value.trim();
+        if(!texto) return;
+
+        if(!mensagensChat[sósiaAtual]) mensagensChat[sósiaAtual] = [];
+        mensagensChat[sósiaAtual].push({ enviadoPor: 'usuario', texto: texto });
+        input.value = '';
+        renderizarMensagens();
+
+        setTimeout(() => {
+            mensagensChat[sósiaAtual].push({ enviadoPor: 'sosia', texto: "Excelente proposta! Repassei os detalhes ao meu agente e retornaremos com o orçamento formatado." });
+            renderizarMensagens();
+        }, 1200);
+    }
+
+ 
+    modalPerfil.querySelector('#fechar-modal-perfil').addEventListener('click', () => modalPerfil.style.display = 'none');
+    modalChat.querySelector('#fechar-chat').addEventListener('click', () => modalChat.style.display = 'none');
+    modalChat.querySelector('#chat-enviar').addEventListener('click', enviarMensagem);
+    modalChat.querySelector('#chat-input').addEventListener('keyup', (e) => { if(e.key === 'Enter') enviarMensagem(); });
+
+   
+    cardsOriginais.forEach(card => {
+        const nome = card.querySelector('h2').innerText.trim();
+        const avatar = card.querySelector('.avatar');
+        
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => abrirModalPerfil(nome, avatar));
+    });
+
+  
+    function gerarCardMatch(nome) {
+        const cardOriginal = cardsOriginais.find(c => c.querySelector('h2').innerText.trim() === nome);
+        const avatarOriginalHtml = cardOriginal ? cardOriginal.querySelector('.avatar').innerHTML : "";
+
+        const cardMatch = document.createElement('div');
+        cardMatch.className = 'card';
+        cardMatch.style.cursor = 'pointer';
+        
+        cardMatch.innerHTML = `
+            <div class="avatar">${avatarOriginalHtml}</div>
+            <div style="flex:1;">
+                <h2>${nome}</h2>
+                <p style="color:#00b6db; font-size:12px; font-weight:bold; margin: 2px 0;">🔥 Conexão Ativa</p>
+                <p style="font-size:12px; opacity:0.7;">Bate-papo liberado.</p>
+            </div>
+            <button class="btn-chat-direto" style="background:#db00b6; border:none; color:#fff; padding:6px 14px; border-radius:15px; font-size:12px; font-weight:bold; cursor:pointer;">Chat</button>
+        `;
+
+        cardMatch.querySelector('.btn-chat-direto').addEventListener('click', (e) => {
+            e.stopPropagation();
+            abrirBatePapo(nome);
+        });
+
+        cardMatch.addEventListener('click', () => {
+            const av = cardMatch.querySelector('.avatar');
+            abrirModalPerfil(nome, av);
+        });
+        return cardMatch;
+    }
+
+
+    function atualizarFeed() {
+        const termoBusca = campoBusca.value.toLowerCase().trim();
+        const botaoAtivo = document.querySelector('.filtros button.ativo');
+        const abaAtiva = botaoAtivo ? botaoAtivo.innerText.toLowerCase() : 'todos';
+
+        containerResultados.innerHTML = '';
+        let itensExibidos = 0;
+
+        if (['todos', 'sósias', 'atores', 'pessoas'].includes(abaAtiva)) {
+            cardsOriginais.forEach(card => {
+                const nome = card.querySelector('h2').innerText.toLowerCase();
+                const descricao = card.querySelector('p').innerText.toLowerCase();
+                
+                const ehSosia = descricao.includes('sósia');
+                const ehAtorReal = descricao.includes('atriz') || descricao.includes('ator') || descricao.includes('cantora');
+
+                const bateBusca = nome.includes(termoBusca) || descricao.includes(termoBusca);
+                let bateAba = false;
+
+                if (abaAtiva === 'todos') bateAba = true;
+                else if (abaAtiva === 'sósias' && ehSosia) bateAba = true; 
+                else if (abaAtiva === 'atores' && ehAtorReal) bateAba = true; 
+                else if (abaAtiva === 'pessoas' && !ehSosia && !ehAtorReal) bateAba = true;
+
+                if (bateBusca && bateAba) {
+                    containerResultados.appendChild(card);
+                    itensExibidos++;
+                }
+            });
+        } 
+        else if (abaAtiva === 'matches') {
+            perfisQueDeramMatch.forEach(nome => {
+                if (nome.toLowerCase().includes(termoBusca)) {
+                    containerResultados.appendChild(gerarCardMatch(nome));
+                    itensExibidos++;
+                }
+            });
+        }
+
+        if (itensExibidos === 0) {
+            containerResultados.innerHTML = `
+                <div style="width: 100%; text-align: center; color: #ffffff; opacity: 0.5; padding: 50px 10px;">
+                    <p>Nenhum perfil localizado nesta categoria.</p>
+                </div>
+            `;
+        }
+    }
+
+    botoesFiltro.forEach(botao => {
+        botao.addEventListener('click', () => {
+            botoesFiltro.forEach(b => b.classList.remove('ativo'));
+            botao.classList.add('ativo');
+            atualizarFeed();
+        });
+    });
+
+    campoBusca.addEventListener('input', atualizarFeed);
+    btnBuscar.addEventListener('click', atualizarFeed);
+
+    atualizarFeed();
+});
+</script>

@@ -1,0 +1,147 @@
+body {
+    background: linear-gradient(to bottom, #01010b, #250122);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.topo-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 40px;
+    background-color: rgba(1, 1, 11, 0.8);
+    border-bottom: 2px solid #4f044c;
+}
+
+.Logo {
+    height: 120px;
+    width: auto;
+}
+
+.titulo-saber {
+    font-size: 32px;
+    margin-left: 40px;
+    background: linear-gradient(45deg, #ff7b00, #e60067, #7928ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.conteudo-principal {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.titulo-historia {
+    font-size: 28px;
+    color: #ff7b00;
+    margin-bottom: 30px;
+    border-left: 4px solid #e60067;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+p {
+    font-size: 17px;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.destaque {
+    color: #ff7b00;
+    font-weight: bold;
+}
+
+.destaque-rosa {
+    color: #e60067;
+    font-weight: bold;
+}
+
+.marca {
+    color: #e60067;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lista-pilares {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-pilares li {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(230, 0, 103, 0.2);
+}
+
+.pilar-nome {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff7b00;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.frase-final {
+    font-style: italic;
+    border-top: 1px solid #4f044c;
+    padding-top: 20px;
+    margin-top: 40px;
+    color: #b3b3b3;
+}
+
+.voltar{
+    border-radius: 5px;
+    border: 1px solid rgba(230, 0, 103, 0.2);
+    padding: 10px 40px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff7b00, #e60067, #7928ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+
+.voltar:hover{
+    border-radius: 5px;
+    border: 1px solid rgba(230, 0, 103, 0.2);
+    padding: 10px 40px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff7b00, #e60067, #7928ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 12px;               
+}
+
+::-webkit-scrollbar-track {
+    background: #01010b;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #4f044c;       
+    border-radius: 6px;      
+    border: 2px solid #01010b; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e60067; 
+}

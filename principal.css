@@ -1,0 +1,132 @@
+body{
+    background: linear-gradient(to bottom, #01010b, #250122);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.topo-pagina{
+    background-color: rgba(1, 1, 11, 0.8);
+    border-bottom: 2px solid #4f044c;
+    padding: 20px 40px;
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    width: auto;
+    top: 0;
+}
+
+.alinhamento{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.botao{
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to left, #ff7b00, #e60067, #7928ca);
+    color: rgb(86, 2, 2);
+    box-shadow: 7px 7px 11px #7928ca98;
+    padding: 8px 2px;
+}
+
+.botao:hover{
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to left, #ff7b00, #e60067, #7928ca);
+    color: rgb(86, 2, 2);
+    box-shadow: 7px 7px 11px #7928ca98;
+    padding: 10px 4px;
+}
+
+.botoes{
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.alinhamento .botoes:last-child{
+    justify-content: flex-end;
+}
+
+.intro{
+    font-size: 28px;
+    color: #ff7b00;
+    margin-bottom: 30px;
+    border-left: 4px solid #e60067;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+
+.introducao{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.marcar{
+    color: #ff7b00;
+}
+
+.lista-passos{
+    list-style: none;
+    padding: 0;
+}
+
+.lista-passos li{
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(230, 0, 103, 0.2);
+}
+
+.passos-nome{
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff7b00;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.frase-final{
+    font-style: italic;
+    border-top: 1px solid #4f044c;
+    padding-top: 20px;
+    margin-top: 40px;
+    color: #b3b3b3;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 12px;               
+}
+
+::-webkit-scrollbar-track {
+    background: #01010b;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #4f044c;       
+    border-radius: 6px;      
+    border: 2px solid #01010b; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e60067; 
+}
